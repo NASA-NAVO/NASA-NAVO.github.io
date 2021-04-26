@@ -14623,39 +14623,8 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Sample-Plotting-Functions">Sample Plotting Functions<a class="anchor-link" href="#Sample-Plotting-Functions">&#182;</a></h2><p>These functions support converting our query results to pandas then plotting some sample plots using bokeh, both in a notebook and on a web page.</p>
+<h2 id="Sample-Plotting-Functions">Sample Plotting Functions<a class="anchor-link" href="#Sample-Plotting-Functions">&#182;</a></h2><p>The class and functions described in this <a href="https://servicemon.readthedocs.io/en/latest/analysis-api.html">API document</a> support making queries, converting our query results to pandas, then plotting some sample plots using bokeh, both in a notebook and on a web page.  That API is used by the code below.</p>
 
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Create-Data-Source-for-Bokeh">Create Data Source for Bokeh<a class="anchor-link" href="#Create-Data-Source-for-Bokeh">&#182;</a></h4>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Support-tooltips-for-plotted-points.">Support tooltips for plotted points.<a class="anchor-link" href="#Support-tooltips-for-plotted-points.">&#182;</a></h4>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Plot-Query-Duration-versus-Start-Time">Plot Query Duration versus Start Time<a class="anchor-link" href="#Plot-Query-Duration-versus-Start-Time">&#182;</a></h4>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Plot-Query-and-Download-Duration-versus-Number-of-Result-Rows">Plot Query and Download Duration versus Number of Result Rows<a class="anchor-link" href="#Plot-Query-and-Download-Duration-versus-Number-of-Result-Rows">&#182;</a></h4>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Create-Plots-for-all-Services">Create Plots for all Services<a class="anchor-link" href="#Create-Plots-for-all-Services">&#182;</a></h4><p>Loop through stats for multiple services and display the plots in the notebook or on an html page.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Example:-Use-Above-Methods">Example: Use Above Methods<a class="anchor-link" href="#Example:-Use-Above-Methods">&#182;</a></h4>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
@@ -14667,8 +14636,7 @@ a.anchor-link {
 
 <span class="n">services</span> <span class="o">=</span> <span class="n">sq</span><span class="o">.</span><span class="n">get_name_service_pairs</span><span class="p">()</span>
 
-<span class="n">create_service_plots</span><span class="p">(</span><span class="n">sq</span><span class="p">,</span> <span class="n">services</span><span class="p">,</span> <span class="n">start_time</span><span class="o">=</span><span class="s1">&#39;2021-04-22&#39;</span><span class="p">)</span>
-<span class="c1">#create_service_plots(sq, services[0:2], start_time=&#39;2021-02-10&#39;, htmlfile=&#39;testpage.html&#39;, title=&quot;Test Title&quot;)</span>
+<span class="n">create_service_plots</span><span class="p">(</span><span class="n">sq</span><span class="p">,</span> <span class="n">services</span><span class="p">,</span> <span class="n">start_time</span><span class="o">=</span><span class="s1">&#39;2021-04-22&#39;</span><span class="p">,</span> <span class="n">end_time</span><span class="o">=</span><span class="s1">&#39;2021-04-25&#39;</span><span class="p">)</span>
 </pre></div>
 
      </div>
