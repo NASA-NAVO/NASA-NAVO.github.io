@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <title>NAVO Service Monitor Statistics - Demo</title>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+    <meta http-equiv='x-ua-compatible' content='ie=edge'>
+  </head>
+  <body>
+    <div>
+        <h1>NAVO Service Monitor Statistics - Demo Page</h1>
+        <h2>Overview</h2>
+        <p>
+            NAVO has started regularly querying some TAP and Cone Search services to collect 
+            data on their response times.  So far this is mostly NAVO services, but also includes 
+            a CDS 2MASS cone search for comparison.  (Some Chandra Source Catalog queries are 
+            also done, but due to sparse sky coverage these need to be adjusted.)
+        </p>
+        <p>The queries are done using the <code>servicemon</code> application 
+            (<a href="https://servicemon.readthedocs.io/en/latest/" rel="noopener" 
+            target="_blank">https://servicemon.readthedocs.io/en/latest/</a>), 
+            and are executed from several different locations.  The AWS instrumentation is 
+            handled with the software at <a href="https://github.com/NASA-NAVO/AWS_servicemon" 
+            rel="noopener" target="_blank">https://github.com/NASA-NAVO/AWS_servicemon</a>.  
+            The results are written to a TAP-accessible database currently running at IPAC.  
+        </p>
+        <h2>Exploring the Results</h2>
+        <h3>Via Static Web Pages</h3>
+        <p>
+            Plots are generated each week to summarize the statistics for the week.  Those are available here:
+        </p>
+    </div>
+    <div id='myapp'>
+        <div>
+            <button v-on:click="openWeeklyPage">Open statistics for week of</button>
+            <v-date-picker 
+                v-model="date_selected" 
+                :model-config="modelConfig"
+                :available-dates="availableDates"
+                :locale="locale"
+                >
+                <template v-slot="{ inputValue, inputEvents }">
+                    <input
+                        class="bg-white border px-2 py-1 rounded"
+                        :value="inputValue"
+                        v-on="inputEvents"
+                        readonly
+                    />
+                </template>
+            </v-date-picker>
+        </div>
+    </div>
+    <div>
+        <h3>Using the TAP Service</h3>
+        <p>The results are available via a TAP service at 
+            <a href="http://navo01.ipac.caltech.edu/TAP" rel="noopener" 
+            target="_blank">http://navo01.ipac.caltech.edu/TAP</a> which has a table 
+            called <code>navostats2</code> with one row per query run by servicemon. 
+            This table contains data starting from about April 6, 2021.  
+        </p>
+        <p>
+            For much more detailed information about what tests were run, and how to use
+            the TAP service, please the see rendered Jupyter notebook at NOTEBOOKURL
+        </p>
+    </div>
+
+    <!-- 1. Link Vue Javascript -->
+    <script src='https://unpkg.com/vue/dist/vue.js'></script>
+
+    <!-- 2. Link VCalendar Javascript (Plugin automatically installed) -->
+    <script src='https://unpkg.com/v-calendar'></script>
+
+    <script src="navostats.js"></script>
+
+  </body>
+</html>
