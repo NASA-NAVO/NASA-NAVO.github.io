@@ -31,7 +31,7 @@
     </div>
     <div id='myapp'>
         <div>
-            <button v-on:click="openWeeklyPage">Open statistics for week of</button>
+            <button v-on:click="openWeeklyPage" style="font-size:larger;">Open statistics for week of</button>
             <v-date-picker 
                 v-model="date_selected" 
                 :model-config="modelConfig"
@@ -44,6 +44,7 @@
                         :value="inputValue"
                         v-on="inputEvents"
                         readonly
+                        style="font-size:larger;"
                     />
                 </template>
             </v-date-picker>
@@ -59,7 +60,8 @@
         </p>
         <p>
             For much more detailed information about what tests were run, and how to use
-            the TAP service, please the see rendered Jupyter notebook at NOTEBOOKURL
+            the TAP service, please see the <a href="https://nasa-navo.github.io/notebooks/ExplorePerformanceData.html" rel="noopener" 
+            target="_blank">rendered Jupyter notebook</a>  
         </p>
     </div>
 

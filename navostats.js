@@ -1,4 +1,11 @@
-console.log("Script Started")
+function formatDate(d) {
+    formatted = [
+        d.getFullYear(),
+        ('0' + (d.getMonth() + 1)).slice(-2),
+        ('0' + d.getDate()).slice(-2)
+    ].join('-');
+    return formatted;
+  }
 
 var now = new Date();
 var dayOfWeek = now.getDay();
@@ -9,7 +16,7 @@ if (dayOfWeek === 0) {
     weekAgoMondayOffset += (dayOfWeek - 1);
 }
 var weekAgoMonday = new Date(now.getTime() - (weekAgoMondayOffset * 24*60*60*1000));
-var weekAgoMondayString = weekAgoMonday.toISOString().slice(0, 10);
+var weekAgoMondayString = formatDate(weekAgoMonday);
 
 myapp = new Vue({
     el: '#myapp',
